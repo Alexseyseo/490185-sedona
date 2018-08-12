@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Aleksey Suprun](https://up.htmlacademy.ru/htmlcss/22/user/490185).
-* Наставник: Юлия Антонова.
+* Наставник: [Юлия Антонова](https://up.htmlacademy.ru/htmlcss/22/user/39082).
 
 ---
 
