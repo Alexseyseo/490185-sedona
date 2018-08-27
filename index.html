@@ -14,20 +14,20 @@
             <li><a href="info.html">Информация</a></li>
             <li><a href="media.html">Фото и видео</a></li>
             <li><a href="maps.html">Карта штата</a></li>
-            <li><a href="hotels.html">Гостиницы</a></li>
+            <li><a href="catalog.html">Гостиницы</a></li>
           </ul>
         </nav>
       </header>
       <main class="container">
         <section class="intro">
-          <h1 class="visually-hidden">Сайт города Седона</h1>
+          <h1 class="visually-hidden">Добро пожаловать в Седону!</h1>
           <img src="img/intro-welcome.svg" width="459" height="353" alt="Welcome to the gorgeous Sedona. Because the Grand Canyon sucks!">
         </section>
         <section class="advantages">
           <h2 class="visually-hidden">Преимущества</h2>
 
-          <p>Седона-небольшой городок в Аризоне, заслуживающий большего!</p>
-          <p>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон</p>
+          <p>Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
+          <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
 
           <div class="advantages-item advantages-item-wide">
             <h3>Настоящий городок</h3>
@@ -77,20 +77,37 @@
               </li>
             </ul>
           </div>
-
         </section>
         <section class="main-search">
           <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
           <b>Заинтересовались?</b>
           <p>Укажите предполагаемые даты поездки, и мы покажем Вам лучшие предложения гостиниц в Седоне</p>
-          <!-- Ссылка ниже в будущем будет переделана в кнопку, которая вызывает выпадающее вниз окно -->
           <a href="#">Поиск гостиницы в Седоне</a>
           <div class="search-form">
-            <!-- Здесь будет форма поиска гостиницы -->
+            <form method="post" action="https://echo.htmlacademy.ru">
+              <p>
+                <label for="date-arrival">Дата заезда:</label>
+                <input id="date-arrival" name="date-of-arrival" type="text" placeholder="24 апреля 2017">
+              </p>
+              <p>
+                <label for="date-departure">Дата выезда:</label>
+                <input id="date-departure" name="date-of-departure" type="text" placeholder="4 июля 2017">
+              </p>
+              <p class="half-column">
+                <label for="adults">Взрослые:</label>
+                <input id="adults" name="amount-of-adults" type="number" value="2">
+              </p>
+              <p class="half-column">
+                <label for="children">Дети:</label>
+                <input id="children" name="amount-of-children" type="number" value="0">
+              </p>
+              <button type="submit" name="button">Найти</button>
+            </form>
           </div>
         </section>
         <section class="main-map">
-          <!-- Здесь будет карта -->
+          <!-- Здесь будет интерактивная карта-->
+          <h2 class="visually-hidden">Интерактивная карта города Sedona</h2>
           <img src="img/map.jpg" width="1200" height="594" alt="Google maps">
         </section>
       </main>
@@ -98,12 +115,12 @@
         <p class="footer-hashtag">#visitsedona</p>
         <div class="footer-social">
           <ul>
-            <li><a href="#" class="social-btn social-btn-twitter"><img src="img/social-twitter.svg" alt="Twitter"></a></li>
-            <li><a href="#" class="social-btn social-btn-facebook"><img src="img/social-facebook.svg" alt="Facebook"></a></li>
-            <li><a href="#" class="social-btn social-btn-youtube"><img src="img/social-youtube.svg" alt="YouTube"></a></li>
+            <li><a href="#" class="social-btn social-btn-twitter"><img src="img/social-twitter.svg" alt="Следите за нами в Twitter"></a></li>
+            <li><a href="#" class="social-btn social-btn-facebook"><img src="img/social-facebook.svg" alt=" Следуйте за нами на Facebook"></a></li>
+            <li><a href="#" class="social-btn social-btn-youtube"><img src="img/social-youtube.svg" alt="Смотрите видео о нас на YouTube"></a></li>
           </ul>
         </div>
-        <p class="footer-copyright">Wedsite by <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" width="115" height="41" alt="HTML Academy"></a></p>
+        <p class="footer-copyright">Wedsite by <a href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" width="115" height="41" alt="Сделано в HTMLAcademy"></a></p>
       </footer>
     </div>
   </body>
