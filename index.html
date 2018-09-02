@@ -88,18 +88,25 @@
               <p>
                 <label for="date-arrival">Дата заезда:</label>
                 <input id="date-arrival" name="date-of-arrival" type="text" placeholder="24 апреля 2017">
+                <!-- пока не определился, как лучше реализовать значок календаря. Поидее его надо будет делать фоном кнопки через CSS  -->
+                <button type="button"><img src="img/icon-calendar.svg" alt="Календарь" width="21px" height="22px"></button>
               </p>
               <p>
                 <label for="date-departure">Дата выезда:</label>
                 <input id="date-departure" name="date-of-departure" type="text" placeholder="4 июля 2017">
+                <button type="button"><img src="img/icon-calendar.svg" alt="Календарь" width="21px" height="22px"></button>
               </p>
               <p class="half-column">
                 <label for="adults">Взрослые:</label>
+                <button type="button" name="adults-minus">-</button>
                 <input id="adults" name="amount-of-adults" type="number" value="2">
+                <button type="button" name="adults-plus">+</button>
               </p>
               <p class="half-column">
                 <label for="children">Дети:</label>
+                <button type="button" name="children-minus">-</button>
                 <input id="children" name="amount-of-children" type="number" value="0">
+                <button type="button" name="children-plus">+</button>
               </p>
               <button type="submit" name="button">Найти</button>
             </form>
