@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Седона</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <!-- Первый див, основная обертка для всего контента, для задания ширины и выравнивания -->
@@ -29,7 +32,7 @@
           <p>Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
           <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
 
-          <div class="advantages-item advantages-item-wide">
+          <div class="advantages-item advantages-item-wide advantages-wide-one">
             <h3>Настоящий городок</h3>
             <p>-№1-</p>
             <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
@@ -52,7 +55,7 @@
             </ul>
           </div>
 
-          <div class="advantages-item advantages-item-wide">
+          <div class="advantages-item advantages-item-wide advantages-wide-two">
             <h3>Там есть мост дьявола</h3>
             <p>-№2-</p>
             <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
@@ -99,13 +102,13 @@
               <p class="half-column">
                 <label for="adults">Взрослые:</label>
                 <button type="button" name="adults-minus">-</button>
-                <input id="adults" name="amount-of-adults" type="number" value="2">
+                <input id="adults" name="amount-of-adults" type="text" value="2">
                 <button type="button" name="adults-plus">+</button>
               </p>
               <p class="half-column">
                 <label for="children">Дети:</label>
                 <button type="button" name="children-minus">-</button>
-                <input id="children" name="amount-of-children" type="number" value="0">
+                <input id="children" name="amount-of-children" type="text" value="0">
                 <button type="button" name="children-plus">+</button>
               </p>
               <button type="submit" name="button">Найти</button>
@@ -114,7 +117,7 @@
         </section>
         <section class="main-map">
           <!-- Здесь будет интерактивная карта-->
-          <h2 class="visually-hidden">Интерактивная карта города Sedona</h2>
+          <h2 class="visually-hidden">Как до нас добраться</h2>
           <img src="img/map.jpg" width="1200" height="594" alt="Google maps">
         </section>
       </main>

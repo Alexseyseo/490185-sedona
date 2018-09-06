@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Седона. Поиск жилья</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body class="inner-page">
     <div class="main-content">
       <header class="main-header">
         <a class="main-navigation-logo" href="index.html"><img src="img/logo.svg" width="140" height="72" alt="City of Sedona"></a>
@@ -13,7 +16,7 @@
             <li><a href="info.html">Информация</a></li>
             <li><a href="media.html">Фото и видео</a></li>
             <li><a href="maps.html">Карта штата</a></li>
-            <li><a href="catalog.html">Гостиницы</a></li>
+            <li><a href="catalog.html" class="current-page">Гостиницы</a></li>
           </ul>
         </nav>
       </header>
@@ -21,6 +24,7 @@
       <main class="container">
         <h1 class="visually-hidden">Поиск жилья в Седоне</h1>
         <section class="catalog-form">
+          <h2  class="visually-hidden">Фильтр жилья</h2>
           <form method="post" action="https://echo.htmlacademy.ru">
             <fieldset>
               <legend>Инфраструктура:</legend>
@@ -60,14 +64,14 @@
           <div class="catalog-result-sorting">
             <b>Найдено: 3</b>
             <span>Сортировка:</span>
-            <ul>
-              <li><button type="button">по цене</button></li>
-              <li><button type="button">по типу</button></li>
-              <li><button type="button">по рейтингу</button></li>
+            <ul class="sorting-type">
+              <li><a class="sorting-by-price current-sorting" href="#">по цене</a></li>
+              <li><a class="sorting-by-type" href="#">по типу</a></li>
+              <li><a class="sorting-by-raiting" href="#">по рейтингу</a></li>
             </ul>
-            <ul class="soting-arrow">
-              <li class="sorting-top"><button type="button">A-z</button></li>
-              <li class="sorting-bottom"><button type="button">Z-a</button></li>
+            <ul class="sorting-arrow">
+              <li><a class="sorting-top" href="#">A-z</a></li>
+              <li><a class="sorting-bottom current-sorting" href="#">Z-a</a></li>
             </ul>
           </div>
           <div class="catalog-result-list">
@@ -77,14 +81,14 @@
                   <img src="img/hotel-mini-1.jpg" width="135" height="90" class="catalog-item-image" alt="Amara Resort & Spa">
                 </div>
                 <div class="catalog-item-description">
-                  <h2><a href="#amara-resort-and-spa">Amara Resort &#38; Spa</a></h2>
+                  <h2 class="catalog-item-title"><a href="#amara-resort-and-spa">Amara Resort &#38; Spa</a></h2>
                   <p>Гостиница</p>
                   <p>от 4000 р.</p>
                   <a href="#подробнее" class="link-more">Подробнее</a>
                   <a href="#забронировать" class="link-booking">Забронировать</a>
                 </div>
                 <div class="catalog-item-rating">
-                  <span class="rating-stars"></span>
+                  <span class="rating-stars four-stars"></span>
                   <p>Рейтинг: 8,5</p>
                 </div>
               </li>
@@ -93,14 +97,14 @@
                   <img src="img/hotel-mini-2.jpg" width="135" height="90" class="catalog-item-image" alt="Amara Resort & Spa">
                 </div>
                 <div class="catalog-item-description">
-                  <h2><a href="#desert-quail-inn">Desert Quail Inn</a></h2>
+                  <h2 class="catalog-item-title"><a href="#desert-quail-inn">Desert Quail Inn</a></h2>
                   <p>Мотель</p>
                   <p>от 3000 р.</p>
                   <a href="#подробнее" class="link-more">Подробнее</a>
                   <a href="#забронировать" class="link-booking">Забронировать</a>
                 </div>
                 <div class="catalog-item-rating">
-                  <span class="rating-stars"></span>
+                  <span class="rating-stars three-stars"></span>
                   <p>Рейтинг: 8,9</p>
                 </div>
               </li>
@@ -109,14 +113,14 @@
                   <img src="img/hotel-mini-3.jpg" width="135" height="90" class="catalog-item-image" alt="Amara Resort & Spa">
                 </div>
                 <div class="catalog-item-description">
-                  <h2><a href="#villas-at-poco-diablo">Villas At Poco Diablo</a></h2>
+                  <h2 class="catalog-item-title"><a href="#villas-at-poco-diablo">Villas At Poco Diablo</a></h2>
                   <p>Апартаменты</p>
                   <p>от 2000 р.</p>
                   <a href="#подробнее" class="link-more">Подробнее</a>
                   <a href="#забронировать" class="link-booking">Забронировать</a>
                 </div>
                 <div class="catalog-item-rating">
-                  <span class="rating-stars"></span>
+                  <span class="rating-stars two-stars"></span>
                   <p>Рейтинг: 9,2</p>
                 </div>
               </li>
@@ -124,7 +128,6 @@
           </div>
         </section>
       </main>
-
       <footer class="main-footer">
         <p class="footer-hashtag">#visitsedona</p>
         <div class="footer-social">
