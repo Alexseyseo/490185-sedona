@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Седона</title>
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -29,74 +29,82 @@
         <section class="advantages">
           <h2 class="visually-hidden">Преимущества</h2>
 
-          <p>Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
-          <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+          <p class="advantages-description">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
+          <p class="advantages-intro">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
 
-          <div class="advantages-item advantages-item-wide advantages-wide-one">
-            <h3>Настоящий городок</h3>
-            <p>-№1-</p>
-            <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
+          <div class="advantage-wide">
+            <div class="advantage-text">
+              <h3>Настоящий городок</h3>
+              <p>-№1-</p>
+              <p>Седона - не аттракцион для туристов, там течет своя жизнь</p>
+            </div>
+            <div class="advantage-image">
+              <img src="img/advantage-1.jpg" alt="Улицы города Седона" width="800" height="401">
+            </div>
           </div>
 
-          <div class="advantages-list advantages-list-illustrated">
-            <ul>
-              <li class="advantages-item">
-                <h3>Жильё</h3>
-                <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
-              </li>
-              <li class="advantages-item">
-                <h3>Еда</h3>
-                <p>Всегда щакащывайте фирменный бургер, вы не разочаруетесь!</p>
-              </li>
-              <li class="advantages-item">
-                <h3>Сувениры</h3>
-                <p>Не только китайского, но и местного производства!</p>
-              </li>
-            </ul>
+          <div class="features">
+            <div class="feature">
+              <!-- Иконки планирую добвать через ::before, т.к. если указывать их через img, там же надо писать alt, а контентного смысла в них не вижу, они больше похожи на декоротивный элемент  -->
+              <h3>Жильё</h3>
+              <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+            </div>
+            <div class="feature">
+              <h3>Еда</h3>
+              <p>Всегда щакащывайте фирменный бургер, вы не разочаруетесь!</p>
+            </div>
+            <div class="feature">
+              <h3>Сувениры</h3>
+              <p>Не только китайского, но и местного производства!</p>
+            </div>
           </div>
 
-          <div class="advantages-item advantages-item-wide advantages-wide-two">
-            <h3>Там есть мост дьявола</h3>
-            <p>-№2-</p>
-            <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+          <div class="advantage-wide">
+            <div class="advantage-image">
+              <img src="img/advantage-2.jpg" alt="Вид на мост дьявола" width="800" height="401">
+            </div>
+            <div class="advantage-text">
+              <h3>Там есть мост дьявола</h3>
+              <p>-№2-</p>
+              <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+            </div>
           </div>
 
           <div class="advantages-list">
-            <ul>
-              <li class="advantages-item">
-                <h3>Небольшая площадь</h3>
-                <p>-№3-</p>
-                <p>Все достопримечательности находятся очень близко</p>
-              </li>
-              <li class="advantages-item">
-                <h3>Красивая дорога</h3>
-                <p>-№4-</p>
-                <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
-              </li>
-              <li class="advantages-item">
-                <h3>Мало туристов</h3>
-                <p>-№5-</p>
-                <p>Большинстов едет в гранд каньон и толпится там</p>
-              </li>
-            </ul>
+            <div class="advantage">
+              <h3>Небольшая площадь</h3>
+              <p>-№3-</p>
+              <p>Все достопримечательности находятся очень близко</p>
+            </div>
+            <div class="advantage">
+              <h3>Красивая дорога</h3>
+              <p>-№4-</p>
+              <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+            </div>
+            <div class="advantage">
+              <h3>Мало туристов</h3>
+              <p>-№5-</p>
+              <p>Большинстов едет в гранд каньон и толпится там</p>
+            </div>
           </div>
         </section>
+
         <section class="main-search">
           <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
           <b>Заинтересовались?</b>
-          <p>Укажите предполагаемые даты поездки, и мы покажем Вам лучшие предложения гостиниц в Седоне</p>
-          <a href="#">Поиск гостиницы в Седоне</a>
+          <p class="search-description">Укажите предполагаемые даты поездки, и мы покажем Вам лучшие предложения гостиниц в Седоне</p>
+          <a class="search-button" href="#">Поиск гостиницы в Седоне</a>
           <div class="search-form">
             <form method="post" action="https://echo.htmlacademy.ru">
               <p>
                 <label for="date-arrival">Дата заезда:</label>
-                <input id="date-arrival" name="date-of-arrival" type="text" placeholder="24 апреля 2017">
+                <input id="date-arrival" name="date-of-arrival" type="text" value="24 апреля 2017">
                 <!-- пока не определился, как лучше реализовать значок календаря. Поидее его надо будет делать фоном кнопки через CSS  -->
                 <button type="button"><img src="img/icon-calendar.svg" alt="Календарь" width="21px" height="22px"></button>
               </p>
               <p>
                 <label for="date-departure">Дата выезда:</label>
-                <input id="date-departure" name="date-of-departure" type="text" placeholder="4 июля 2017">
+                <input id="date-departure" name="date-of-departure" type="text" value="4 июля 2017">
                 <button type="button"><img src="img/icon-calendar.svg" alt="Календарь" width="21px" height="22px"></button>
               </p>
               <p class="half-column">
