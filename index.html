@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <!-- Первый див, основная обертка для всего контента, для задания ширины и выравнивания -->
     <div class="main-content">
       <header class="main-header">
         <a class="main-navigation-logo"><img src="img/logo.svg" width="140" height="72" alt="City of Sedona"></a>
@@ -27,10 +26,11 @@
           <img src="img/intro-welcome.svg" width="459" height="353" alt="Welcome to the gorgeous Sedona. Because the Grand Canyon sucks!">
         </section>
         <section class="advantages">
-          <h2 class="visually-hidden">Преимущества</h2>
-
-          <p class="advantages-description">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
-          <p class="advantages-intro">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+          <div class="advantages-title">
+            <h2 class="visually-hidden">Преимущества</h2>
+            <p class="advantages-description">Седона — небольшой городок в Аризоне, заслуживающий большего!</p>
+            <p class="advantages-intro">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+          </div>
 
           <div class="advantage-wide">
             <div class="advantage-text">
@@ -45,15 +45,18 @@
 
           <div class="features">
             <div class="feature">
-              <!-- Иконки планирую добвать через ::before, т.к. если указывать их через img, там же надо писать alt, а контентного смысла в них не вижу, они больше похожи на декоротивный элемент  -->
+              <!-- согласен, что для шаблонного добавления данных элементов будет лучше вставить иконку через img  -->
+              <img src="img/icon-1-house.svg" alt="Жилье" width="75" height="72">
               <h3>Жильё</h3>
               <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
             </div>
             <div class="feature">
+            <img src="img/icon-2-burger.svg" alt="Еда" width="64" height="76">
               <h3>Еда</h3>
               <p>Всегда щакащывайте фирменный бургер, вы не разочаруетесь!</p>
             </div>
             <div class="feature">
+            <img src="img/icon-3-gift.svg" alt="Сувениры" width="74" height="70">
               <h3>Сувениры</h3>
               <p>Не только китайского, но и местного производства!</p>
             </div>
@@ -107,18 +110,20 @@
                 <input id="date-departure" name="date-of-departure" type="text" value="4 июля 2017">
                 <button type="button"><img src="img/icon-calendar.svg" alt="Календарь" width="21px" height="22px"></button>
               </p>
-              <p class="half-column">
-                <label for="adults">Взрослые:</label>
-                <button type="button" name="adults-minus">-</button>
-                <input id="adults" name="amount-of-adults" type="text" value="2">
-                <button type="button" name="adults-plus">+</button>
-              </p>
-              <p class="half-column">
-                <label for="children">Дети:</label>
-                <button type="button" name="children-minus">-</button>
-                <input id="children" name="amount-of-children" type="text" value="0">
-                <button type="button" name="children-plus">+</button>
-              </p>
+              <div class="form-half-column">
+                <p class="half-column">
+                  <label for="adults">Взрослые:</label>
+                  <button type="button" name="adults-minus">-</button>
+                  <input id="adults" name="amount-of-adults" type="text" value="2">
+                  <button type="button" name="adults-plus">+</button>
+                </p>
+                <p class="half-column">
+                  <label for="children">Дети:</label>
+                  <button type="button" name="children-minus">-</button>
+                  <input id="children" name="amount-of-children" type="text" value="0">
+                  <button type="button" name="children-plus">+</button>
+                </p>
+              </div>
               <button type="submit" name="button">Найти</button>
             </form>
           </div>

@@ -24,10 +24,34 @@ a {
 
 /* Main header on all pages */
 .main-header {
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
 }
+.main-navigation-logo {
+  margin: 0 auto;
+  margin-top: -67px;
+  order: 2;
+}
+.main-navigation {
+  padding: 0 73px;
+}
 .main-navigation ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
   list-style: none;
+}
+.main-navigation li {
+  width: 240px;
+  padding: 20px 0;
+}
+.main-navigation li:nth-child(2) {
+  margin-right: auto;
+}
+.main-navigation li:nth-last-child(2),
+.main-navigation li:last-child {
+  text-align: right;
 }
 .main-navigation a {
   color: #000000;
@@ -55,30 +79,40 @@ a {
   background-repeat:
     no-repeat,
     no-repeat;
+    margin-bottom: 60px;
 }
 
 /* Advantages on the main page */
 .advantages {
-  /* Немного сомневаюсь, в общем блоке стиле объявить выравнивание по середине или отдельно для кадого блока */
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 .advantages h3 {
   font-size: 21px;
   line-height: 21px;
 }
-.advantages .advantages-description {
+.advantages-title {
+  margin-bottom: 55px;
+}
+.advantages-description {
   font-size: 21px;
   line-height: 26px;
 }
-.advantages .advantages-intro {
+.advantages-intro {
   font-size: 14px;
   line-height: 26px;
   font-weight: 400;
   color: #333333;
 }
 .advantage-wide {
+  display: flex;
   background-color: #81b3d2;
   color: #ffffff;
+}
+.advantage-text {
+  padding-top: 45px;
+  padding-bottom: 60px;
 }
 .advantage-text p {
   font-size: 14px;
@@ -86,29 +120,38 @@ a {
   font-weight: 400;
 }
 .features {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 85px;
   background-color: #ffffff;
 }
-.features p {
+.feature {
+  width: 400px;
+  padding-top: 55px;
+}
+.features p,
+.advantages-list p {
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
   color: #333333;
 }
 .advantages-list {
+  display: flex;
+  flex-wrap: wrap;
   background-color: #eeeeee;
 }
-.advantages-list p {
-  /* список свойст идентичен .feature p, прописать их вместе через запятую или не стоит совмещать такие элементы из разных блоков? */
-  font-size: 14px;
-  line-height: 21px;
-  font-weight: 400;
-  color: #333333;
+.advantage {
+  width: 400px;
+  padding-top: 45px;
+  padding-bottom: 60px;
 }
 
 /* Search on the main page */
 .main-search {
   background-color: #ffffff;
   text-align: center;
+  padding-top: 55px;
 }
 .main-search b {
   font-size: 30px;
@@ -136,8 +179,18 @@ a {
   background-color: #503e33;
 }
 .search-form {
+  /* задал размеры и некоторые свойства, т.к. в будущем будет позиционироваться абсолютом, ведь это же будет попап!? А для абсолюта вроде нужны размеры обязательно. */
+  box-sizing: border-box;
+  width: 568px;
+  height: 395px;
+  margin: 0 auto;
+  padding: 55px;
   background-color: #ffffff;
   box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
+}
+.search-form form {
+  display: flex;
+  flex-direction: column;
 }
 .search-form input {
   font: inherit;
@@ -185,29 +238,53 @@ a {
   background-color: #5496bd;
   color: rgba(255, 255, 255, 0.3);
 }
+.form-half-column {
+  display: flex;
+}
+.half-column {
+  width: 229px;
+}
 
 /* Main footer on all pages */
 .main-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 36px 73px;
   background-color: rgba(254, 254, 254, 0.9);
 }
 .footer-hashtag {
   font-size: 21px;
   line-height: 26px;
+  margin: 0;
 }
 .footer-social ul {
+  display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.social-btn {
+/* Ниже неправильно стилизовал соц.кнопки, кликабельна стала сама иконка, исправлю на этапе декоративных элементов */
+.footer-social li {
+  width: 46px;
+  height: 48px;
+  margin-right: 6px;
   background-color: #81b3d2;
 }
-.social-btn:hover {
+.footer-social li:last-child {
+  margin-right: 0;
+}
+.footer-social li:hover {
   background-color: #669ec0;
 }
-.social-btn:active {
+.footer-social li:active {
   background-color: #5496bd;
 }
-.footer-copyright img {
-  font-weight: 400;
+.social-btn:active {
+  opacity: 0.3;
+}
+.footer-copyright {
+  margin: 0;
 }
 .footer-copyright img {
   vertical-align: middle;
@@ -215,45 +292,57 @@ a {
 
 /* style on the catalog page */
 .catalog-form {
+  background-color: #404c52; /* цвет для того, если не прогрузилась картинка */
   background-image: url("../img/catalog-header-bg.jpg");
   background-position: center center;
   background-repeat: no-repeat;
-
   font-size: 14px;
   line-height: 21px;
   color: #ffffff;
 }
-.catalog-form fieldset {
+.catalog-filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 70px;
+}
+.catalog-filter fieldset {
+  margin: 0;
+  padding: 0;
   border: none;
 }
-.catalog-form ul {
+.catalog-filter fieldset:nth-child(2) {
+  margin-right: auto;
+}
+.catalog-filter ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
-.catalog-form li,
-.catalog-form label {
+.catalog-filter li,
+.catalog-filter label {
   font-weight: 400;
 }
-.catalog-form input[type="text"] {
+.catalog-filter input[type="text"] {
   background-color: transparent;
   border: none;
   color: inherit;
 }
-.catalog-form button[type="submit"] {
+.catalog-filter button[type="submit"] {
   background-color: transparent;
   border: 2px solid #ffffff;
   color: #ffffff;
   text-transform: uppercase;
   line-height: 21px;
 }
-.catalog-form button[type="submit"]:hover {
+.catalog-filter button[type="submit"]:hover {
   background-color: #ffffff;
   color: #000000;
 }
 
 .catalog-result-sorting {
-  border-bottom: 1px solid #e5e5e5;
-}
-.catalog-result-sorting {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 70px;
   font-size: 21px;
   line-height: 26px;
 }
@@ -267,6 +356,10 @@ a {
   color: #000000;
 }
 .catalog-result-sorting ul {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
   list-style: none;
 }
 .sorting-type a {
@@ -284,6 +377,9 @@ a {
   color: #81b3d2;
   border: none;
 }
+.sorting-arrow {
+  margin-left: auto;
+}
 .sorting-arrow a {
   /* Сами стрелки как я понял надо делать будет позже) */
   border: 5px solid #cacaca;
@@ -297,7 +393,21 @@ a {
 }
 
 .catalog-result-list ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
+}
+.catalog-result-item {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e5e5e5;
+  padding: 30px 70px;
+}
+.catalog-result-item:last-child {
+  border-bottom: 1px solid #e5e5e5;
+}
+.catalog-item-description {
+  margin-right: auto;
 }
 .catalog-item-description p {
   font-size: 14px;
