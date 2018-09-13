@@ -45,7 +45,6 @@
 
           <div class="features">
             <div class="feature">
-              <!-- согласен, что для шаблонного добавления данных элементов будет лучше вставить иконку через img  -->
               <img src="img/icon-1-house.svg" alt="Жилье" width="75" height="72">
               <h3>Жильё</h3>
               <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
@@ -96,13 +95,14 @@
           <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
           <b>Заинтересовались?</b>
           <p class="search-description">Укажите предполагаемые даты поездки, и мы покажем Вам лучшие предложения гостиниц в Седоне</p>
-          <a class="search-button" href="#">Поиск гостиницы в Седоне</a>
-          <div class="search-form">
-            <form method="post" action="https://echo.htmlacademy.ru">
+
+          <div class="search-block">
+            <a class="search-button" href="#">Поиск гостиницы в Седоне</a>
+            <!-- не оборачивал, т.к. подумал, что нет смысла в отдельном диве для этого попапа  -->
+            <form class="search-popup" method="post" action="https://echo.htmlacademy.ru">
               <p>
                 <label for="date-arrival">Дата заезда:</label>
                 <input id="date-arrival" name="date-of-arrival" type="text" value="24 апреля 2017">
-                <!-- пока не определился, как лучше реализовать значок календаря. Поидее его надо будет делать фоном кнопки через CSS  -->
                 <button type="button"><img src="img/icon-calendar.svg" alt="Календарь" width="21px" height="22px"></button>
               </p>
               <p>

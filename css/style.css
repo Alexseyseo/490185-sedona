@@ -30,7 +30,8 @@ a {
 }
 .main-navigation-logo {
   margin: 0 auto;
-  margin-top: -67px;
+  margin-top: -57px;
+  margin-bottom: -23px;
   order: 2;
 }
 .main-navigation {
@@ -44,7 +45,7 @@ a {
 }
 .main-navigation li {
   width: 240px;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 .main-navigation li:nth-child(2) {
   margin-right: auto;
@@ -113,6 +114,10 @@ a {
 .advantage-text {
   padding-top: 45px;
   padding-bottom: 60px;
+  width: 33.333333%;
+}
+.advantage-image {
+  width: 66.666666%;
 }
 .advantage-text p {
   font-size: 14px;
@@ -158,41 +163,46 @@ a {
   line-height: 36px;
   font-weight: 700;
 }
-.main-search .search-description {
+.search-description {
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
   color: #333333;
 }
-.main-search .search-button {
+
+.search-block {
+  position: relative;
+  width: 568px;
+  margin: 0 auto;
+}
+.search-button {
+  display: block;
+  width: 100%;
+  padding: 30px 0;
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
   color: #ffffff;
   background-color: #766357;
 }
-.main-search .search-button:hover {
+.search-button:hover {
   background-color: #604e43;
 }
-.main-search .search-button:active {
+.search-button:active {
   color: rgba(255, 255, 255, 0.3);
   background-color: #503e33;
 }
-.search-form {
-  /* задал размеры и некоторые свойства, т.к. в будущем будет позиционироваться абсолютом, ведь это же будет попап!? А для абсолюта вроде нужны размеры обязательно. */
-  box-sizing: border-box;
-  width: 568px;
-  height: 395px;
-  margin: 0 auto;
+
+.search-popup {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 100%;
   padding: 55px;
   background-color: #ffffff;
   box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
 }
-.search-form form {
-  display: flex;
-  flex-direction: column;
-}
-.search-form input {
+.search-popup input {
   font: inherit;
   font-size: 14px;
   line-height: 26px;
@@ -202,27 +212,26 @@ a {
   background-color: #f2f2f2;
   border: 2px solid #f2f2f2;
 }
-.search-form input:hover {
+.search-popup input:hover {
   background-color: #ebebeb;
-  border: 2px solid #ebebeb;
+  border-color: #ebebeb;
 }
-.search-form input:focus {
+.search-popup input:focus {
   background-color: #ffffff;
-  border: 2px solid #e5e5e5;
+  border-color: #e5e5e5;
 }
-.search-form button[type="button"] {
+.search-popup button[type="button"] {
   border: none;
   background-color: transparent;
   color: #a9a9a9;
-  font-weight: 700;
 }
-.search-form button[type="button"]:hover {
+.search-popup button[type="button"]:hover {
   color: #000000;
 }
-.search-form button[type="button"]:active {
+.search-popup button[type="button"]:active {
   color: #81b3d2;
 }
-.search-form button[type="submit"] {
+.search-popup button[type="submit"] {
   background-color: #81b3d2;
   border: none;
   color: #ffffff;
@@ -231,10 +240,10 @@ a {
   font-weight: 700;
   text-transform: uppercase;
 }
-.search-form button[type="submit"]:hover {
+.search-popup button[type="submit"]:hover {
   background-color: #669ec0;
 }
-.search-form button[type="submit"]:active {
+.search-popup button[type="submit"]:active {
   background-color: #5496bd;
   color: rgba(255, 255, 255, 0.3);
 }
@@ -242,24 +251,30 @@ a {
   display: flex;
 }
 .half-column {
-  width: 229px;
+  width: 50%;
 }
 
 /* Main footer on all pages */
 .main-footer {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 36px 73px;
+  padding: 36px 0;
   background-color: rgba(254, 254, 254, 0.9);
+}
+.footer-hashtag,
+.footer-social,
+.footer-copyright {
+  width: 33.333333%;
+  text-align: center;
+  margin: 0;
 }
 .footer-hashtag {
   font-size: 21px;
   line-height: 26px;
-  margin: 0;
 }
 .footer-social ul {
   display: flex;
+  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -282,9 +297,6 @@ a {
 }
 .social-btn:active {
   opacity: 0.3;
-}
-.footer-copyright {
-  margin: 0;
 }
 .footer-copyright img {
   vertical-align: middle;
