@@ -12,11 +12,32 @@ body {
 a {
   text-decoration: none;
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 .main-content {
   width: 1200px;
   margin: 0 auto;
   background-color: #ffffff;
   box-shadow: 0 0 15px rgba(0, 1, 1, 0.2);
+}
+.main-content.only-index {
+  position: relative;
 }
 .inner-page .main-content {
   background-color: #fefefe;
@@ -24,21 +45,20 @@ a {
 
 /* Main header on all pages */
 .main-header {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   background-color: #ffffff;
 }
 .main-navigation-logo {
-  margin: 0 auto;
-  margin-top: -57px;
-  margin-bottom: -23px;
+  /* изменил позиционирование, чтобы при переполнении лого не уезжало вниз */
+  position: absolute;
+  width: 140px;
+  left: 50%;
+  margin-left: -70px;
   order: 2;
-}
-.main-navigation {
-  padding: 0 73px;
 }
 .main-navigation ul {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -46,18 +66,17 @@ a {
 .main-navigation li {
   width: 240px;
   padding: 15px 0;
+  text-align: center;
 }
-.main-navigation li:nth-child(2) {
-  margin-right: auto;
-}
-.main-navigation li:nth-last-child(2),
-.main-navigation li:last-child {
-  text-align: right;
+.main-navigation li:nth-child(4n+2) {
+  /* сделал как защиту от переполнения*/
+  margin-right: 240px;
 }
 .main-navigation a {
   color: #000000;
 }
-.main-navigation a:hover {
+.main-navigation a:hover,
+.main-navigation a:focus {
   color: #81b3d2;
 }
 .main-navigation a:active {
@@ -74,6 +93,7 @@ a {
   background:
     url("../img/intro-polygon.svg"),
     url("../img/intro-bg.jpg");
+    /* не разобрался, как сделать позиционирование большой картинки, подогнал пикселями */
   background-position:
     center bottom,
     center top;
@@ -81,6 +101,9 @@ a {
     no-repeat,
     no-repeat;
     margin-bottom: 60px;
+}
+.intro img {
+  margin-top: 76px;
 }
 
 /* Advantages on the main page */
@@ -92,17 +115,24 @@ a {
 .advantages h3 {
   font-size: 21px;
   line-height: 21px;
+  margin: 0;
+  margin-bottom: 24px;
 }
 .advantages-title {
-  margin-bottom: 55px;
+  margin-bottom: 50px;
+}
+.advantages-description,
+.advantages-intro {
+  margin: 0;
+  padding: 0 310px;
+  line-height: 26px;
 }
 .advantages-description {
   font-size: 21px;
-  line-height: 26px;
+  margin-bottom: 27px;
 }
 .advantages-intro {
   font-size: 14px;
-  line-height: 26px;
   font-weight: 400;
   color: #333333;
 }
@@ -111,34 +141,44 @@ a {
   background-color: #81b3d2;
   color: #ffffff;
 }
-.advantage-text {
-  padding-top: 45px;
-  padding-bottom: 60px;
+.advantage-text,
+.advantage {
+  box-sizing: border-box;
+  padding: 47px 49px 38px 49px;
   width: 33.333333%;
 }
 .advantage-image {
   width: 66.666666%;
+  height: 256px;
 }
-.advantage-text p {
-  font-size: 14px;
-  line-height: 21px;
-  font-weight: 400;
-}
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 85px;
-  background-color: #ffffff;
-}
-.feature {
-  width: 400px;
-  padding-top: 55px;
-}
+.advantage-text p,
 .features p,
 .advantages-list p {
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
+  margin-bottom: 21px;
+}
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+}
+.feature {
+  box-sizing: border-box;
+  width: 33.333333%;
+  padding: 55px 49px 70px 49px;
+}
+.feature img {
+  width: 75px;
+  height: 76px;
+  margin-bottom: 20px;
+}
+.feature h3 {
+  margin-bottom: 25px;
+}
+.features p,
+.advantages-list p {
   color: #333333;
 }
 .advantages-list {
@@ -146,17 +186,12 @@ a {
   flex-wrap: wrap;
   background-color: #eeeeee;
 }
-.advantage {
-  width: 400px;
-  padding-top: 45px;
-  padding-bottom: 60px;
-}
 
 /* Search on the main page */
 .main-search {
   background-color: #ffffff;
   text-align: center;
-  padding-top: 55px;
+  padding-top: 50px;
 }
 .main-search b {
   font-size: 30px;
@@ -164,6 +199,9 @@ a {
   font-weight: 700;
 }
 .search-description {
+  margin-top: 23px;
+  margin-bottom: 50px;
+  padding: 0 360px;
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
@@ -185,7 +223,8 @@ a {
   color: #ffffff;
   background-color: #766357;
 }
-.search-button:hover {
+.search-button:hover,
+.search-button:focus {
   background-color: #604e43;
 }
 .search-button:active {
@@ -195,14 +234,39 @@ a {
 
 .search-popup {
   position: absolute;
-  display: flex;
+  display: none;
   flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
   top: 100%;
   padding: 55px;
   background-color: #ffffff;
   box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
 }
+.search-popup.active {
+  display: flex;
+}
+.search-popup p {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.search-popup p:nth-child(1) {
+  margin-top: 0;
+}
+.search-popup label {
+  width: 110px;
+  line-height: 38px;
+  text-align: left;
+}
 .search-popup input {
+  width: 346px;
+  height: 38px;
+  padding-left: 10px;
+  padding-right: 35px;
+  box-sizing: border-box;
   font: inherit;
   font-size: 14px;
   line-height: 26px;
@@ -221,17 +285,31 @@ a {
   border-color: #e5e5e5;
 }
 .search-popup button[type="button"] {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  right: 0;
+  padding: 0;
   border: none;
   background-color: transparent;
   color: #a9a9a9;
 }
-.search-popup button[type="button"]:hover {
-  color: #000000;
+.search-popup button[type="button"].minus {
+  right: 76px;
 }
-.search-popup button[type="button"]:active {
-  color: #81b3d2;
+/* ниже тройная вложенность, я могу убрать search-popup но тогда визуально будет трудно определить что это за кнопки, возможно будет правильнее добавить отдельный класс обоим кнопкам и стилизовать через него */
+.search-popup button[type="button"]:hover rect,
+.search-popup button[type="button"]:hover path,
+.search-popup button[type="button"]:focus rect,
+.search-popup button[type="button"]:focus path{
+  fill: #000000;
+}
+.search-popup button[type="button"]:active rect,
+.search-popup button[type="button"]:active path {
+  fill: #81b3d2;
 }
 .search-popup button[type="submit"] {
+  padding: 16px 0;
   background-color: #81b3d2;
   border: none;
   color: #ffffff;
@@ -240,7 +318,8 @@ a {
   font-weight: 700;
   text-transform: uppercase;
 }
-.search-popup button[type="submit"]:hover {
+.search-popup button[type="submit"]:hover,
+.search-popup button[type="submit"]:focus {
   background-color: #669ec0;
 }
 .search-popup button[type="submit"]:active {
@@ -249,17 +328,32 @@ a {
 }
 .form-half-column {
   display: flex;
+  margin-bottom: 20px;
 }
 .half-column {
-  width: 50%;
+  width: 226px;
+}
+.children {
+  width: 180px;
+  margin-left: auto;
+}
+.half-column input {
+  width: 114px;
+  padding: 0 38px;
+  text-align: center;
 }
 
 /* Main footer on all pages */
 .main-footer {
   display: flex;
   align-items: center;
+  bottom: 0;
   padding: 36px 0;
   background-color: rgba(254, 254, 254, 0.9);
+}
+.only-index .main-footer {
+  position: absolute;
+  width: 100%;
 }
 .footer-hashtag,
 .footer-social,
@@ -275,52 +369,80 @@ a {
 .footer-social ul {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
-/* Ниже неправильно стилизовал соц.кнопки, кликабельна стала сама иконка, исправлю на этапе декоративных элементов */
 .footer-social li {
-  width: 46px;
-  height: 48px;
   margin-right: 6px;
-  background-color: #81b3d2;
 }
 .footer-social li:last-child {
   margin-right: 0;
 }
-.footer-social li:hover {
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 48px;
+  background-color: #81b3d2;
+}
+.social-btn:hover,
+.social-btn:focus {
   background-color: #669ec0;
 }
-.footer-social li:active {
+.social-btn:active {
   background-color: #5496bd;
 }
-.social-btn:active {
+.social-btn:active img {
   opacity: 0.3;
 }
-.footer-copyright img {
+.link-htmlacademy svg {
+  display: inline-block;
   vertical-align: middle;
+  margin-left: 6px; /* смущает обводка при выделении через Tab */
+}
+.link-htmlacademy path,
+.link-htmlacademy rect {
+  fill: #231f20;
+}
+.link-htmlacademy:hover path,
+.link-htmlacademy:hover rect,
+.link-htmlacademy:focus path,
+.link-htmlacademy:focus rect {
+  fill: #81b3d2;
+}
+.link-htmlacademy:active path,
+.link-htmlacademy:active rect {
+  fill: #bdbbbc;
 }
 
-/* style on the catalog page */
+/* Catalog page style */
 .catalog-form {
-  background-color: #404c52; /* цвет для того, если не прогрузилась картинка */
+  background-color: #404c52;
   background-image: url("../img/catalog-header-bg.jpg");
-  background-position: center center;
+  background-position: center top;
   background-repeat: no-repeat;
   font-size: 14px;
   line-height: 21px;
   color: #ffffff;
 }
+
 .catalog-filter {
   display: flex;
-  justify-content: space-between;
   padding: 30px 70px;
 }
 .catalog-filter fieldset {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: none;
+  width: 250px;
+  padding-right: 10px;
+}
+.catalog-filter legend{
+  margin-bottom: 25px;
 }
 .catalog-filter fieldset:nth-child(2) {
   margin-right: auto;
@@ -334,19 +456,121 @@ a {
 .catalog-filter label {
   font-weight: 400;
 }
-.catalog-filter input[type="text"] {
-  background-color: transparent;
-  border: none;
-  color: inherit;
+.catalog-filter li {
+  position: relative;
+  margin-bottom: 22px;
+  padding-left: 40px;
 }
-.catalog-filter button[type="submit"] {
-  background-color: transparent;
+.input-checkbox + label:before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  left: 0;
+  top: 0;
+  background-image: url("../img/checkbox-off.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.input-checkbox:checked + label:before {
+  background-image: url("../img/checkbox-on.svg");
+}
+.catalog-filter .filter-range {
+  width: 330px;
+  padding-right: 0;
+}
+.filter-range  legend{
+  margin-bottom: 10px;
+}
+
+.filter-range-price {
+  position: relative;
+  height: 34px;
   border: 2px solid #ffffff;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  font-size: 0;
+}
+.filter-range-price:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 22px;
+  background-color: #ffffff;
+  left: 50%;
+  right: 50%;
+  top: 6px;
+}
+.filter-range-price label {
+  display: inline-block;
+  vertical-align: top;
+  width: 98px;
+  padding-left: 65px;
+  font-size: 14px;
+  line-height: 34px;
+  cursor: pointer;
+}
+.filter-range-price input {
+  width: 50px;
+  margin: 0;
+  line-height: 32px;
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+}
+.filter-range-price input:focus {
+  cursor: text;
+}
+
+.filter-range-control {
+  position: relative;
+  margin-bottom: 30px;
+}
+.filter-range-control .scale{
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.filter-range-control .bar{
+  width: 80%;
+  height: 2px;
+  background: #ffffff;
+}
+.range-toggle {
+  position: absolute;
+  top: -9px;
+  width: 4px;
+  height: 4px;
+  background-color: #ababab;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer;
+}
+.range-toggle:hover {
+  background: #1c4f80;
+}
+.range-toggle-min {
+  left: 0;
+}
+.range-toggle-max {
+  left: 80%;
+}
+
+.catalog-filter button[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  padding: 6px 35px;
+  line-height: 21px;
   color: #ffffff;
   text-transform: uppercase;
-  line-height: 21px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
 }
-.catalog-filter button[type="submit"]:hover {
+.catalog-filter button[type="submit"]:hover,
+.catalog-filter button[type="submit"]:focus {
   background-color: #ffffff;
   color: #000000;
 }
@@ -361,10 +585,15 @@ a {
 .catalog-result-sorting span,
 .catalog-result-sorting a {
   font-size: 12px;
-  line-height: 18px;
+  line-height: 26px;
   font-weight: 400;
 }
+.catalog-result-sorting b {
+  margin-right: 50px;
+}
 .catalog-result-sorting span {
+  margin-right: 40px;
+  line-height: 30px;
   color: #000000;
 }
 .catalog-result-sorting ul {
@@ -374,11 +603,15 @@ a {
   padding: 0;
   list-style: none;
 }
+.sorting-type li {
+  margin-right: 30px;
+}
 .sorting-type a {
   border-bottom: 1px dotted #81b3d2;
   color: rgba(0, 0, 0, 0.3);
 }
-.sorting-type a:hover {
+.sorting-type a:hover,
+.sorting-type a:focus {
   color: #81b3d2;
 }
 .sorting-type a:active {
@@ -392,16 +625,37 @@ a {
 .sorting-arrow {
   margin-left: auto;
 }
-.sorting-arrow a {
-  /* Сами стрелки как я понял надо делать будет позже) */
-  border: 5px solid #cacaca;
+.sorting-top,
+.sorting-bottom {
+  display: inline-block;
+  border: 10px solid transparent;
+  border-left-width: 5px;
+  border-right-width: 5px;
 }
-.sorting-arrow a:hover {
-  border-color: #000000;
+.sorting-top {
+  border-top: 0;
+  border-bottom-color: #cacaca;
+  margin-right: 12px;
 }
-.sorting-arrow a:active,
-.sorting-arrow .current-sorting {
-  border-color: #81b3d2;
+.sorting-top:hover,
+.sorting-top:focus {
+  border-bottom-color: #000000;
+}
+.sorting-top:active,
+.sorting-top.current-sorting {
+  border-bottom-color: #81b3d2;
+}
+.sorting-bottom {
+  border-bottom: 0;
+  border-top-color: #cacaca;
+}
+.sorting-bottom:hover,
+.sorting-bottom:focus {
+  border-top-color: #000000;
+}
+.sorting-bottom:active,
+.sorting-bottom.current-sorting {
+  border-top-color: #81b3d2;
 }
 
 .catalog-result-list ul {
