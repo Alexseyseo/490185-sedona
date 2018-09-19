@@ -52,6 +52,7 @@ input[type="radio"].visually-hidden {
   /* изменил позиционирование, чтобы при переполнении лого не уезжало вниз */
   position: absolute;
   width: 140px;
+  top: -1px;
   left: 50%;
   margin-left: -70px;
   order: 2;
@@ -65,7 +66,7 @@ input[type="radio"].visually-hidden {
 }
 .main-navigation li {
   width: 240px;
-  padding: 15px 0;
+  padding: 14px 0 16px 0;
   text-align: center;
 }
 .main-navigation li:nth-child(4n+2) {
@@ -117,9 +118,11 @@ input[type="radio"].visually-hidden {
   line-height: 21px;
   margin: 0;
   margin-bottom: 24px;
+  padding: 0 75px;
+  word-wrap: break-word;
 }
 .advantages-title {
-  margin-bottom: 50px;
+  margin-bottom: 51px;
 }
 .advantages-description,
 .advantages-intro {
@@ -167,7 +170,7 @@ input[type="radio"].visually-hidden {
 .feature {
   box-sizing: border-box;
   width: 33.333333%;
-  padding: 55px 49px 70px 49px;
+  padding: 57px 49px 60px 49px;
 }
 .feature img {
   width: 75px;
@@ -180,6 +183,7 @@ input[type="radio"].visually-hidden {
 .features p,
 .advantages-list p {
   color: #333333;
+  word-wrap: break-word;
 }
 .advantages-list {
   display: flex;
@@ -200,7 +204,7 @@ input[type="radio"].visually-hidden {
 }
 .search-description {
   margin-top: 23px;
-  margin-bottom: 50px;
+  margin-bottom: 47px;
   padding: 0 360px;
   font-size: 14px;
   line-height: 24px;
@@ -252,9 +256,6 @@ input[type="radio"].visually-hidden {
   position: relative;
   margin-top: 0;
   margin-bottom: 30px;
-}
-.search-popup p:nth-child(1) {
-  margin-top: 0;
 }
 .search-popup label {
   width: 110px;
@@ -328,7 +329,7 @@ input[type="radio"].visually-hidden {
 }
 .form-half-column {
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 23px;
 }
 .half-column {
   width: 226px;
@@ -341,6 +342,10 @@ input[type="radio"].visually-hidden {
   width: 114px;
   padding: 0 38px;
   text-align: center;
+}
+.main-map {
+  line-height: 0;
+  font-size: 0;
 }
 
 /* Main footer on all pages */
@@ -431,18 +436,19 @@ input[type="radio"].visually-hidden {
 
 .catalog-filter {
   display: flex;
-  padding: 30px 70px;
+  padding: 27px 72px 32px 72px;
 }
 .catalog-filter fieldset {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: none;
-  width: 250px;
-  padding-right: 10px;
+  width: 255px;
 }
 .catalog-filter legend{
-  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 21px;
+  margin-bottom: 24px;
 }
 .catalog-filter fieldset:nth-child(2) {
   margin-right: auto;
@@ -458,7 +464,7 @@ input[type="radio"].visually-hidden {
 }
 .catalog-filter li {
   position: relative;
-  margin-bottom: 22px;
+  margin-bottom: 25px;
   padding-left: 40px;
 }
 .catalog-filter li:last-child {
@@ -479,7 +485,7 @@ input[type="radio"].visually-hidden {
   background-image: url("../img/checkbox-on.svg");
 }
 .catalog-filter .filter-range {
-  width: 330px;
+  width: 318px;
   padding-right: 0;
 }
 .filter-range  legend{
@@ -488,7 +494,7 @@ input[type="radio"].visually-hidden {
 
 .filter-range-price {
   position: relative;
-  height: 34px;
+  height: 32px;
   border: 2px solid #ffffff;
   border-radius: 2px;
   margin-bottom: 20px;
@@ -507,11 +513,14 @@ input[type="radio"].visually-hidden {
 .filter-range-price label {
   display: inline-block;
   vertical-align: top;
-  width: 98px;
+  width: 90px;
   padding-left: 65px;
   font-size: 14px;
   line-height: 34px;
   cursor: pointer;
+}
+.filter-range-price label.cost-day-max {
+  padding-left: 55px;
 }
 .filter-range-price input {
   width: 50px;
@@ -528,7 +537,7 @@ input[type="radio"].visually-hidden {
 
 .filter-range-control {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 .filter-range-control .scale{
   height: 2px;
@@ -563,7 +572,7 @@ input[type="radio"].visually-hidden {
 .catalog-filter button[type="submit"] {
   display: block;
   margin: 0 auto;
-  padding: 6px 35px;
+  padding: 6px 35px 5px 35px;
   line-height: 21px;
   color: #ffffff;
   text-transform: uppercase;
