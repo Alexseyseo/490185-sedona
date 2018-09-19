@@ -298,7 +298,6 @@ input[type="radio"].visually-hidden {
 .search-popup button[type="button"].minus {
   right: 76px;
 }
-/* ниже тройная вложенность, я могу убрать search-popup но тогда визуально будет трудно определить что это за кнопки, возможно будет правильнее добавить отдельный класс обоим кнопкам и стилизовать через него */
 .search-popup button[type="button"]:hover rect,
 .search-popup button[type="button"]:hover path,
 .search-popup button[type="button"]:focus rect,
@@ -343,9 +342,8 @@ input[type="radio"].visually-hidden {
   padding: 0 38px;
   text-align: center;
 }
-.main-map {
-  line-height: 0;
-  font-size: 0;
+.main-map img{
+  display: block;
 }
 
 /* Main footer on all pages */
@@ -366,6 +364,9 @@ input[type="radio"].visually-hidden {
   width: 33.333333%;
   text-align: center;
   margin: 0;
+}
+.footer-copyright {
+font-weight: 400;
 }
 .footer-hashtag {
   font-size: 21px;
@@ -572,7 +573,7 @@ input[type="radio"].visually-hidden {
 .catalog-filter button[type="submit"] {
   display: block;
   margin: 0 auto;
-  padding: 6px 35px 5px 35px;
+  padding: 6px 34px 5px 34px;
   line-height: 21px;
   color: #ffffff;
   text-transform: uppercase;
@@ -589,8 +590,7 @@ input[type="radio"].visually-hidden {
 
 .catalog-result-sorting {
   display: flex;
-  justify-content: space-between;
-  padding: 30px 70px;
+  padding: 30px 71px 26px 71px;
   font-size: 21px;
   line-height: 26px;
 }
@@ -601,7 +601,7 @@ input[type="radio"].visually-hidden {
   font-weight: 400;
 }
 .catalog-result-sorting b {
-  margin-right: 50px;
+  margin-right: 48px;
 }
 .catalog-result-sorting span {
   margin-right: 40px;
@@ -612,11 +612,12 @@ input[type="radio"].visually-hidden {
   display: flex;
   margin-top: 0;
   margin-bottom: 0;
+  margin-right: 2px;
   padding: 0;
   list-style: none;
 }
 .sorting-type li {
-  margin-right: 30px;
+  margin-right: 32px;
 }
 .sorting-type a {
   border-bottom: 1px dotted #81b3d2;
@@ -679,7 +680,7 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #e5e5e5;
-  padding: 30px 70px;
+  padding: 25px 72px 31px;
 }
 .catalog-result-item:last-child {
   border-bottom: 1px solid #e5e5e5;
@@ -687,6 +688,7 @@ input[type="radio"].visually-hidden {
 .catalog-item-image {
   width: 135px;
   height: 90px;
+  padding-top: 2px;
 }
 .catalog-item-description {
   margin-left: 30px;
@@ -697,12 +699,12 @@ input[type="radio"].visually-hidden {
 }
 .catalog-item-description p {
   display: inline-block;
-  width: 110px;
+  width: 112px;
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
   color: #333333;
-  margin: 5px 0 15px 0;
+  margin: 7px 0 14px 0;
 }
 .catalog-item-title a {
   font-size: 21px;
@@ -720,11 +722,11 @@ input[type="radio"].visually-hidden {
   font-weight: 14px;
   line-height: 21px;
   color: #ffffff;
-  padding: 7px 16px;
+  padding: 4px 16px 5px 16px;
 }
 .link-more {
   background-color: #81b3d2;
-  margin-right: 6px;
+  margin-right: 5px;
 }
 .link-more:hover {
   background-color: #669ec0;
@@ -754,16 +756,20 @@ input[type="radio"].visually-hidden {
   font-weight: 400;
   color: #666666;
   background-color: #f2f2f2;
-  padding: 5px 15px 7px 15px;
+  padding: 3px 12px 3px 15px;
   margin: 0;
+  margin-right: 1px;
+  margin-bottom: -1px;
 }
 .rating-stars {
   text-align: right;
   margin-bottom: auto;
+  margin-top: 3px;
 }
 .rating-star {
   display: inline-block;
   width: 18px;
   height: 17px;
+  margin-left: 2px;
   background-image: url("../img/star.svg");
 }
