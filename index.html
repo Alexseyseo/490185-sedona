@@ -113,26 +113,30 @@
                 </button>
               </p>
               <div class="form-half-column">
-                <p class="half-column ">
+                <div class="half-column">
                   <label for="adults">Взрослые:</label>
-                  <button type="button" name="adults-minus" class="minus">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><rect x="0" y="5" width="12" height="3" fill="#a9a9a9"/></svg>
-                  </button>
-                  <input id="adults" name="amount-of-adults" type="text" value="2">
-                  <button type="button" name="adults-plus">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"><rect x="4" y="0" width="3" height="11" fill="#a9a9a9"/><rect x="0" y="4" width="11" height="3" fill="#a9a9a9"/></svg>
-                  </button>
-                </p>
-                <p class="half-column children">
+                  <div class="input-number">
+                    <button type="button" name="adults-minus" class="minus">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><rect x="0" y="5" width="12" height="3" fill="#a9a9a9"/></svg>
+                    </button>
+                    <input id="adults" name="amount-of-adults" type="text" value="2">
+                    <button type="button" name="adults-plus">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"><rect x="4" y="0" width="3" height="11" fill="#a9a9a9"/><rect x="0" y="4" width="11" height="3" fill="#a9a9a9"/></svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="half-column children">
                   <label for="children">Дети:</label>
-                  <button type="button" name="children-minus" class="minus">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><rect x="0" y="5" width="12" height="3" fill="#a9a9a9"/></svg>
-                  </button>
-                  <input id="children" name="amount-of-children" type="text" value="0">
-                  <button type="button" name="children-plus">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"><rect x="4" y="0" width="3" height="11" fill="#a9a9a9"/><rect x="0" y="4" width="11" height="3" fill="#a9a9a9"/></svg>
-                  </button>
-                </p>
+                  <div class="input-number">
+                    <button type="button" name="children-minus" class="minus">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><rect x="0" y="5" width="12" height="3" fill="#a9a9a9"/></svg>
+                    </button>
+                    <input id="children" name="amount-of-children" type="text" value="0">
+                    <button type="button" name="children-plus">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"><rect x="4" y="0" width="3" height="11" fill="#a9a9a9"/><rect x="0" y="4" width="11" height="3" fill="#a9a9a9"/></svg>
+                    </button>
+                  </div>
+                </div>
               </div>
               <button type="submit" name="button">Найти</button>
             </form>

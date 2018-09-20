@@ -1,7 +1,8 @@
+/* Global style */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans', Arial, sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 14px;
   line-height: 26px;
   font-weight: 700;
@@ -30,6 +31,7 @@ input[type="radio"].visually-hidden {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
 .main-content {
   width: 1200px;
   margin: 0 auto;
@@ -49,13 +51,11 @@ input[type="radio"].visually-hidden {
   background-color: #ffffff;
 }
 .main-navigation-logo {
-  /* изменил позиционирование, чтобы при переполнении лого не уезжало вниз */
   position: absolute;
   width: 140px;
   top: -1px;
   left: 50%;
   margin-left: -70px;
-  order: 2;
 }
 .main-navigation ul {
   display: flex;
@@ -70,7 +70,6 @@ input[type="radio"].visually-hidden {
   text-align: center;
 }
 .main-navigation li:nth-child(4n+2) {
-  /* сделал как защиту от переполнения*/
   margin-right: 240px;
 }
 .main-navigation a {
@@ -90,18 +89,20 @@ input[type="radio"].visually-hidden {
 /* Intro on the main page */
 .intro {
   height: 508px;
+  margin-bottom: 60px;
   text-align: center;
   background:
     url("../img/intro-polygon.svg"),
     url("../img/intro-bg.jpg");
-    /* не разобрался, как сделать позиционирование большой картинки, подогнал пикселями */
   background-position:
     center bottom,
     center top;
   background-repeat:
     no-repeat,
     no-repeat;
-    margin-bottom: 60px;
+  background-size:
+    100% 57px,
+    cover;
 }
 .intro img {
   margin-top: 76px;
@@ -114,11 +115,11 @@ input[type="radio"].visually-hidden {
   text-align: center;
 }
 .advantages h3 {
-  font-size: 21px;
-  line-height: 21px;
   margin: 0;
   margin-bottom: 24px;
   padding: 0 75px;
+  font-size: 21px;
+  line-height: 21px;
   word-wrap: break-word;
 }
 .advantages-title {
@@ -131,8 +132,8 @@ input[type="radio"].visually-hidden {
   line-height: 26px;
 }
 .advantages-description {
-  font-size: 21px;
   margin-bottom: 27px;
+  font-size: 21px;
 }
 .advantages-intro {
   font-size: 14px;
@@ -157,10 +158,10 @@ input[type="radio"].visually-hidden {
 .advantage-text p,
 .features p,
 .advantages-list p {
+  margin-bottom: 21px;
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
-  margin-bottom: 21px;
 }
 .features {
   display: flex;
@@ -193,9 +194,9 @@ input[type="radio"].visually-hidden {
 
 /* Search on the main page */
 .main-search {
-  background-color: #ffffff;
-  text-align: center;
   padding-top: 50px;
+  text-align: center;
+  background-color: #ffffff;
 }
 .main-search b {
   font-size: 30px;
@@ -237,11 +238,11 @@ input[type="radio"].visually-hidden {
 }
 
 .search-popup {
+  box-sizing: border-box;
   position: absolute;
   display: none;
   flex-direction: column;
   width: 100%;
-  box-sizing: border-box;
   top: 100%;
   padding: 55px;
   background-color: #ffffff;
@@ -251,9 +252,9 @@ input[type="radio"].visually-hidden {
   display: flex;
 }
 .search-popup p {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  position: relative;
   margin-top: 0;
   margin-bottom: 30px;
 }
@@ -263,11 +264,11 @@ input[type="radio"].visually-hidden {
   text-align: left;
 }
 .search-popup input {
+  box-sizing: border-box;
   width: 346px;
   height: 38px;
   padding-left: 10px;
   padding-right: 35px;
-  box-sizing: border-box;
   font: inherit;
   font-size: 14px;
   line-height: 26px;
@@ -289,6 +290,7 @@ input[type="radio"].visually-hidden {
   position: absolute;
   width: 38px;
   height: 38px;
+  top: 0;
   right: 0;
   padding: 0;
   border: none;
@@ -296,7 +298,7 @@ input[type="radio"].visually-hidden {
   color: #a9a9a9;
 }
 .search-popup button[type="button"].minus {
-  right: 76px;
+  left: 0;
 }
 .search-popup button[type="button"]:hover rect,
 .search-popup button[type="button"]:hover path,
@@ -307,6 +309,26 @@ input[type="radio"].visually-hidden {
 .search-popup button[type="button"]:active rect,
 .search-popup button[type="button"]:active path {
   fill: #81b3d2;
+}
+.form-half-column {
+  display: flex;
+  margin-bottom: 53px;
+}
+.half-column {
+  display: flex;
+  width: 50%;
+}
+.children {
+  width: 180px;
+  margin-left: auto;
+}
+.half-column input {
+  width: 114px;
+  padding: 0 38px;
+  text-align: center;
+}
+.input-number {
+  position: relative;
 }
 .search-popup button[type="submit"] {
   padding: 16px 0;
@@ -326,22 +348,7 @@ input[type="radio"].visually-hidden {
   background-color: #5496bd;
   color: rgba(255, 255, 255, 0.3);
 }
-.form-half-column {
-  display: flex;
-  margin-bottom: 23px;
-}
-.half-column {
-  width: 226px;
-}
-.children {
-  width: 180px;
-  margin-left: auto;
-}
-.half-column input {
-  width: 114px;
-  padding: 0 38px;
-  text-align: center;
-}
+
 .main-map img{
   display: block;
 }
@@ -366,7 +373,7 @@ input[type="radio"].visually-hidden {
   margin: 0;
 }
 .footer-copyright {
-font-weight: 400;
+  font-weight: 400;
 }
 .footer-hashtag {
   font-size: 21px;
@@ -407,7 +414,7 @@ font-weight: 400;
 .link-htmlacademy svg {
   display: inline-block;
   vertical-align: middle;
-  margin-left: 6px; /* смущает обводка при выделении через Tab */
+  margin-left: 6px;
 }
 .link-htmlacademy path,
 .link-htmlacademy rect {
@@ -482,6 +489,10 @@ font-weight: 400;
   background-repeat: no-repeat;
   background-position: center;
 }
+.input-checkbox:focus + label:before {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
 .input-checkbox:checked + label:before {
   background-image: url("../img/checkbox-on.svg");
 }
@@ -526,7 +537,6 @@ font-weight: 400;
 .filter-range-price input {
   width: 50px;
   margin: 0;
-  line-height: 32px;
   background-color: transparent;
   border: 0;
   color: inherit;
@@ -703,6 +713,7 @@ font-weight: 400;
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
+  word-wrap: break-word;
   color: #333333;
   margin: 7px 0 14px 0;
 }
@@ -719,7 +730,7 @@ font-weight: 400;
 }
 .link-more,
 .link-booking {
-  font-weight: 14px;
+  font-size: 14px;
   line-height: 21px;
   color: #ffffff;
   padding: 4px 16px 5px 16px;
@@ -762,9 +773,10 @@ font-weight: 400;
   margin-bottom: -1px;
 }
 .rating-stars {
-  text-align: right;
+  width: 115px;
   margin-bottom: auto;
   margin-top: 3px;
+  text-align: right;
 }
 .rating-star {
   display: inline-block;
