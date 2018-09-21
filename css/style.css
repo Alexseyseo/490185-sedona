@@ -91,7 +91,8 @@ input[type="radio"].visually-hidden {
   height: 508px;
   margin-bottom: 60px;
   text-align: center;
-  background:
+  background-color: #8697a9;
+  background-image:
     url("../img/intro-polygon.svg"),
     url("../img/intro-bg.jpg");
   background-position:
@@ -496,6 +497,10 @@ input[type="radio"].visually-hidden {
 .input-checkbox:checked + label:before {
   background-image: url("../img/checkbox-on.svg");
 }
+.input-checkbox:checked:disabled + label:before,
+.input-checkbox:disabled + label:before {
+  opacity: 0.4;
+}
 .catalog-filter .filter-range {
   width: 318px;
   padding-right: 0;
@@ -651,6 +656,7 @@ input[type="radio"].visually-hidden {
 .sorting-top,
 .sorting-bottom {
   display: inline-block;
+  vertical-align: middle;
   border: 10px solid transparent;
   border-left-width: 5px;
   border-right-width: 5px;
@@ -709,6 +715,7 @@ input[type="radio"].visually-hidden {
 }
 .catalog-item-description p {
   display: inline-block;
+  vertical-align: middle;
   width: 112px;
   font-size: 14px;
   line-height: 21px;
@@ -780,6 +787,7 @@ input[type="radio"].visually-hidden {
 }
 .rating-star {
   display: inline-block;
+  vertical-align: top;
   width: 18px;
   height: 17px;
   margin-left: 2px;
