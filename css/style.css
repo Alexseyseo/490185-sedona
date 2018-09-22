@@ -267,6 +267,25 @@ input[type="radio"].visually-hidden {
   transform: translateY(0);
   pointer-events: auto;
 }
+@keyframes shake {
+  0%,
+  100% {
+    background-color: #ffffff;
+  }
+  15%,
+  45%,
+  75% {
+    background-color: #ffc5c5;
+  }
+  30%,
+  60%,
+  90% {
+    background-color: #ffffff;
+  }
+}
+.search-popup.error {
+  animation: shake 3s;
+}
 .search-popup p {
   position: relative;
   display: flex;
