@@ -384,12 +384,15 @@ input[type="radio"].visually-hidden {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.main-map{
+.main-map {
   display: block;
   width: 1200px;
   height: 594px;
   background-image: url(../img/map.jpg);
   background-repeat: no-repeat;
+}
+.main-map iframe {
+  border: none;
 }
 
 /* Main footer on all pages */
